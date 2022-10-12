@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/icon_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEnterMoney"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextEnterMoney"
+        app:srcCompat="@drawable/ic_baseline_enter_your_sum">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/covert_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/currency_selected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/currency_selected"
+        app:srcCompat="@drawable/ic_baseline_convert_currency">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/round_up_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/roundUpConvert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/roundUpConvert"
+        app:srcCompat="@drawable/ic_baseline_round_up">
+    </ImageView>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextEnterMoney"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="@string/enter_sum"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EnterMoneyEditText"
+            android:layout_width="match_parent"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/currency_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/rate_usd"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEnterMoney"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/rate_usd"
+            android:layout_width="match_parent"
+            style="@style/Widget.ConverterCurrency.CompoundButton.RadioButton"
+            android:text="@string/usd"
+            android:layout_height="match_parent">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rate_eur"
+            android:text="@string/euro"
+            style="@style/Widget.ConverterCurrency.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rate_jpy"
+            android:text="@string/jpy"
+            style="@style/Widget.ConverterCurrency.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RadioButton>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/resultConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        style="@style/Widget.ConverterCurrency.TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculatedButton"
+        tools:text="Conversion result: $10"/>
+
+    <Button
+        android:id="@+id/calculatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundUpConvert" />
+
+    <Switch
+        android:id="@+id/roundUpConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/round_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currency_selected"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

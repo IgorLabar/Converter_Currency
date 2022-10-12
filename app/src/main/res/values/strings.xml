@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Converter Currency</string>
+    <string name="enter_amount_of_money">Enter amount of money</string>
+    <string name="usd">USD</string>
+    <string name="euro">EURO</string>
+    <string name="jpy">JPY</string>
+    <string name="conversion_result_s">Conversion result: %s</string>
+    <string name="calculated">calculated</string>
+    <string name="enter_sum">Enter sum</string>
+    <string name="round_up">Round up?</string>
+</resources>
